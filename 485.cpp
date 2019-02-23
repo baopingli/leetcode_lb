@@ -37,15 +37,21 @@ public:
             return 1;
         if(n==1)
             return 0;
-        int flag=0;
-        for(int i=0;i<n-1;i++)
-        {
-            if(nums[i]==1&&nums[i+1]==1)
-            {
+        int counter=0;
+        int res=0;
+       for(int i=0;i<n;i++)
+       {
+           if(nums[i]==1)
+           {
+               counter++;
+               if(res<counter)
+                res=counter;
+           }
+           else
+            counter=0;
 
-            }
-
-        }
+       }
+       return res;
     }
 };
 int main()
