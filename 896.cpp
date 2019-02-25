@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+//me
 class Solution {
 public:
     bool isMonotonic(vector<int>& A) {
@@ -19,6 +20,20 @@ public:
         if((x1==n-1)||(x2==n-1))
             return true;
         return false;
+    }
+};
+//other's
+class Solution {
+public:
+    bool isMonotonic(vector<int>& A) {
+        bool inc=true;
+        bool dec=true;
+        for(int i=0;i<A.size()-1;i++)
+        {
+            inc&=A[i]<=A[i+1];
+            dec&=A[i]>=A[i+1];
+        }
+        return inc||dec;
     }
 };
 int main()
