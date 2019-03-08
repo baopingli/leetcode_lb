@@ -45,5 +45,6 @@ int main()
     pB->g();
     */
     cout<<'b'-'a'<<endl;
+    cout<<string(1,2+'a')<<endl;
     return 0;
 }
