@@ -44,5 +44,6 @@ int main()
     pB->f(2);
     pB->g();
     */
+    cout<<'b'-'a'<<endl;
     return 0;
 }
