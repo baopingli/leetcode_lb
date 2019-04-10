@@ -4,6 +4,7 @@
 using namespace std;
 //我的思路首先计算出这个低谷与高峰之间的插值然后将这些插值比较选择最大的两个。
 //我这个求上升之间的差值，
+//这个思路是不对的，因为有可能即使出现了两个高峰但是不如两个高峰和在一起的时候profit大，所以说这个问题还就得这么解决。
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
@@ -42,6 +43,33 @@ public:
     }
 };
 
+class Solution3{
+public:
+    int maxProfit(vector<int> &prices)
+    {
+        int localminprice=0;
+        int localmaxprice=0;
+        int flag=0;
+        if(prices[0]>prices[1])
+            flag=0;
+        if(prices[0]<=prices[1])
+            flag=1;
+        vector<int> trades;
+        for(int i=1;i<prices.size()-1;i++)
+        {
+            if(prices[i]<=prices[i+1]&&flag==0)//局部最小点
+            {
+                localminprice=prices[i];
+            }
+            if(prices[i]>prices[i+1]&&flag==1)
+            {
+                localminprice=prices[i];
+
+            }
+        }
+    }
+
+};
 
 int main()
 {
